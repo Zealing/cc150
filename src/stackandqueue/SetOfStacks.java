@@ -7,7 +7,6 @@ public class SetOfStacks {
 	ArrayList<Stack> stacks = new ArrayList<Stack>();
 	Node top = null;
 	int capacity = 10;
-	int stackPointer = -1;
 	int countSize = 0;
 	
 	public SetOfStacks (int capacity) {
@@ -46,6 +45,15 @@ public class SetOfStacks {
 	public boolean isEmpty() {
 		Stack last = getLastStack();
 		return last == null || last.isEmpty();
+	}
+	
+	//popAt method---a little trickier -- have to rollover all above stacks
+	public int popAt() {
+		return leftShift(index, true);
+	}
+	
+	public int leftShift(int index, boolean removeTop) {
+		
 	}
 	
 	public static void main(String[] args) {

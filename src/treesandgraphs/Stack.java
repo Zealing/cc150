@@ -1,6 +1,8 @@
-package stackandqueue;
+package treesandgraphs;
 
-public class Stack<Element> {
+import java.util.Iterator;
+
+public class Stack<Element> implements Iterable<Integer> {
 	Node top;
 	int size = 0;
 	int capacity;
@@ -42,6 +44,12 @@ public class Stack<Element> {
 	
 	public boolean isFull() {
 		return size == capacity;
+	}
+
+	@Override
+	public Iterator<Integer> iterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
