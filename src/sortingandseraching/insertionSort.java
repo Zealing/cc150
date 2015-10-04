@@ -1,4 +1,4 @@
-package sorting;
+package sortingandseraching;
 
 public class insertionSort {
 	public static void sort(Comparable[] a, int lo, int hi) {

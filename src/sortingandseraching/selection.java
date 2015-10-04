@@ -1,4 +1,4 @@
-package sorting;
+package sortingandseraching;
 
 //find the kth largest or smallest in a given array--quite similar to quick sort
 public class selection {

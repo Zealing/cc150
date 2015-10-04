@@ -1,4 +1,4 @@
-package sorting;
+package sortingandseraching;
 
 public class quickSort {
 
@@ -48,7 +48,7 @@ public class quickSort {
 		if (hi <= lo) return;
 		int j = partition(a, lo, hi);
 		
-		//pay attention to the cornoer number!!
+		//pay attention to the corner number!!
 		sort(a, lo, j - 1);
 		sort(a, j + 1, hi);
 	}

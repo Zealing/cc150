@@ -13,6 +13,8 @@ public class CallCenter {
 		if (isCall == true) {
 			if (!r.isFull()) {
 				r.goWork();
+			} else {
+				
 			}
 		}
 	}

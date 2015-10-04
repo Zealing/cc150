@@ -117,10 +117,10 @@ public class BST <Key extends Comparable<Key>, Value>{
 			}
 			
 			//if has two children
-			Node t = x;
-			x = min(t.right); // set the new node be the min of right subtree
-			x.right = deleteMin(t.right);//set the right node to the parent of min in the right subtree
-			x.left = t.left;
+			Node t = x; //temporary node 
+			x = min(t.right); // locate to the min node of right subtree
+			x.right = deleteMin(t.right);//set the right node of above node to the right node of deleted node t
+			x.left = t.left; //set the left node of above node to the left node of deleted node t
 		}
 		x.count = 1 + size(x.left) + size(x.right);
 		return x;
