@@ -1,21 +1,23 @@
 package sortingandseraching;
 
+import java.util.Scanner;
+
 public class weightedSum {
 	private int size;
 	
-	private class Node {
-		int index;
-		int readTime;
-		Node left;
-		Node right;
-		int leftSum;
-		int rightSum;
-		int sunDiff;
-		
-		public Node(int readTime) {
-			this.readTime = readTime;
-		}
-	}
+//	private class Node {
+//		int index;
+//		int readTime;
+//		Node left;
+//		Node right;
+//		int leftSum;
+//		int rightSum;
+//		int sunDiff;
+//		
+//		public Node(int readTime) {
+//			this.readTime = readTime;
+//		}
+//	}
 	
 	public int searchSum(Node[] a) {
 		//get the initial point's left and right sums
@@ -73,32 +75,33 @@ public class weightedSum {
 	}
 
 	public static void main(String[] args) {
-		int[] a = {2, 2, 2, 2, 1, 0, 0, 2, 9};
-		Node[] test = new Node[5];
-		test[0].index = 0;
-		test[1].index = 1;
-		test[2].index = 2;
-		test[3].index = 3;
-		test[4].index = 4;
 		
-		test[0].readTime = 2;
-		test[1].readTime = 2;
-		test[2].readTime = 1;
-		test[3].readTime = 2;
-		test[4].readTime = 2;
+		Scanner s = new Scanner(System.in);
 		
-		test[0].left = test[1];
-		test[1].left = test[2];
-		test[2].left = test[3];
-		test[3].left = test[4];
+		System.out.println("please enter size");
 		
-		test[1].right = test[0];
-		test[2].right = test[1];
-		test[3].right = test[2];
-		test[4].right = test[3];
+		int size = s.nextInt();
+		Node[] test = new Node[size];
 		
-		weightedSum ws = new weightedSum(test, 5);
+		System.out.println("please enter read time");
+		
+		for (int i = 0; i < size; i++) {
+			test[i] = new Node(s.nextInt());
+			test[i].index = i;
+		}
+		
+		System.out.println("please enter relationship");
+		
+		int count = 0;
+		while (count <= ((size * 2) - 2)) {
+			int left = s.nextInt() - 1;
+			int right = s.nextInt() - 1;
+			test[left].right = test[right];
+			test[right].left = test[left];
+			count++;
+		}
+		
+		weightedSum ws = new weightedSum(test, size);
 		System.out.println(ws.searchSum(test));
-		
 	}
 }
