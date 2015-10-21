@@ -29,6 +29,8 @@ public class cnt {
 		a[c--] = b[d--];
 		test.hashCode();
 		int i = 1;
-		Long.hashCode(i)
+		Long.hashCode(i);
+		String s = "zzz";
+		s.hashCode();
 ;	}
 }

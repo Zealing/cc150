@@ -1,4 +1,4 @@
-package OODesign;
+package PokerGame;
 
 import java.util.ArrayList;
 
@@ -9,9 +9,13 @@ public class Hand<T extends Card>{
 	public int score() {
 		int score = 0;
 		for (T card: cards) {
-			score += card.value;
+			score += card.value();
 		}
 		return score;
+	}
+	
+	public void addCard(T card) {
+		cards.add(card);
 	}
 
 	public Hand() {
